@@ -1,0 +1,9 @@
+﻿Estructura de lista
+
+Tipo
+Efecto primario
+Color
+Detalles
+Textura
+Efecto secundario
+Poder

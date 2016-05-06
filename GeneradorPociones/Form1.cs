@@ -7,9 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-// -----
-using System.IO;
-using System.Collections;
 
 namespace GeneradorPociones
 {
@@ -18,40 +15,38 @@ namespace GeneradorPociones
         public formPociones()
         {
             InitializeComponent();
-            LeerFichero();
-        }
-
-        string separador = Path.DirectorySeparatorChar.ToString();
-        string rutaFicheroPocimas = @"..\..\listaParametros.txt";
-        string[] lineas;
-        string[] tipo;
-        string[] efectoPrim;
-        string[] aspectoPrim;
-        string[] aspectoSec;
-        string[] textura;
-
-        private void LeerFichero()
-        {
-            string todo = File.ReadAllText(rutaFicheroPocimas);
-            lineas = todo.Split('-');
-            tipo = lineas[0].Split(';');
-            efectoPrim = lineas[1].Split(';');
-            aspectoPrim = lineas[2].Split(';');
-            aspectoSec = lineas[3].Split(';');
-            textura = lineas[4].Split(';');
+            GestionFichero.LeerFichero();
         }
 
         int contadorPociones = 0;
 
         private void GenerarPocima(object sender, EventArgs e)
         {
-                lsB_Resultados.Items.Add("-----");
-                lsB_Resultados.Items.Add("Tipo: " + tipo[new Random().Next(0, tipo.Length)].ToString());
-                lsB_Resultados.Items.Add("Efecto: " + efectoPrim[new Random().Next(0, efectoPrim.Length)].ToString());
-                lsB_Resultados.Items.Add("Aspecto primario: " + aspectoPrim[new Random().Next(0, aspectoPrim.Length)].ToString());
-                lsB_Resultados.Items.Add("Aspecto secundario: " + aspectoSec[new Random().Next(0, aspectoSec.Length)].ToString());
-                lsB_Resultados.Items.Add("Textura: " + textura[new Random().Next(0, textura.Length)].ToString());
-                label1.Text = contadorPociones++.ToString();
+            lbl_NPociones.Text = contadorPociones++.ToString();
+
+            // Generando pociones
+
+            Pocion unaPocion = new Pocion();
+            lsB_Resultados.Items.Add("Tipo: " + unaPocion.Tipo);
+            lsB_Resultados.Items.Add("Poder: " + unaPocion.Poder);
+            lsB_Resultados.Items.Add("Efecto primario: " + unaPocion.EfectoPrim);
+            lsB_Resultados.Items.Add("Efecto secundario: " + unaPocion.EfectoSec);
+            lsB_Resultados.Items.Add("Color: " + unaPocion.Color);
+            lsB_Resultados.Items.Add("Detalles: " + unaPocion.Detalle);
+            lsB_Resultados.Items.Add("Textura: " + unaPocion.Textura);
+
+            lsB_Resultados.Items.Add("");
+
+        }
+
+        private void nuevo_MenuItem_Click(object sender, EventArgs e)
+        {
+            lsB_Resultados.Items.Clear();
+        }
+
+        private void info_MenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"https://geekstorming.wordpress.com");
         }
     }
 }
