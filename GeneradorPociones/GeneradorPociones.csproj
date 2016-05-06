@@ -95,12 +95,10 @@
   <ItemGroup>
     <Content Include="listaParametros.txt" />
     <Content Include="listaEstructura.txt" />
+    <None Include="Resources\pxA_pocion.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\content-save.png" />
     <None Include="Resources\web.png" />
-    <None Include="Resources\genXML.bmp" />
-    <None Include="Resources\pocion.png" />
-    <None Include="Resources\Captura.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

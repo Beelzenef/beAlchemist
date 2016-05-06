@@ -20,10 +20,10 @@ namespace GeneradorPociones
 
         int contadorPociones = 0;
 
+        List<Pocion> listaPoc = new List<Pocion>();
+
         private void GenerarPocima(object sender, EventArgs e)
         {
-            lbl_NPociones.Text = contadorPociones++.ToString();
-
             // Generando pociones
 
             Pocion unaPocion = new Pocion();
@@ -36,7 +36,9 @@ namespace GeneradorPociones
             lsB_Resultados.Items.Add("Textura: " + unaPocion.Textura);
 
             lsB_Resultados.Items.Add("");
+            lbl_NPociones.Text = contadorPociones++.ToString();
 
+            listaPoc.Add(unaPocion);
         }
 
         private void nuevo_MenuItem_Click(object sender, EventArgs e)
@@ -47,6 +49,18 @@ namespace GeneradorPociones
         private void info_MenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@"https://geekstorming.wordpress.com");
+        }
+
+        private void genXML_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (sFD_GuardarXML.ShowDialog() != DialogResult.OK)
+                return;
+            GestionFichero.GenerarXML(listaPoc, sFD_GuardarXML.FileName);
+        }
+
+        private void genHTML_MenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

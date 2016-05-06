@@ -112,9 +112,9 @@ namespace GeneradorPociones {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pocima {
+        internal static System.Drawing.Bitmap pxA_pocion {
             get {
-                object obj = ResourceManager.GetObject("pocima", resourceCulture);
+                object obj = ResourceManager.GetObject("pxA_pocion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

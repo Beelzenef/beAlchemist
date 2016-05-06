@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 // -----
 using System.IO;
 using System.Collections;
+using System.Xml;
 
 namespace GeneradorPociones
 {
@@ -35,6 +36,36 @@ namespace GeneradorPociones
             efectoSec = lineas[5].Split(';');
             poder = lineas[5].Split(';');
 
+        }
+
+        public static void GenerarXML(List<Pocion> lista, string ruta)
+        {
+            XmlWriter escritor = XmlWriter.Create(ruta);
+
+            escritor.WriteStartDocument();
+
+            escritor.WriteStartElement("pociones");
+
+            foreach (Pocion item in lista)
+            {
+                escritor.WriteStartElement("pocion");
+
+                escritor.WriteElementString("tipo", item.Tipo);
+                escritor.WriteElementString("poder", item.Poder);
+                escritor.WriteElementString("efecto1", item.EfectoPrim);
+                escritor.WriteElementString("efecto2", item.EfectoSec);
+                escritor.WriteElementString("color", item.Color);
+                escritor.WriteElementString("detalles", item.Detalle);
+                escritor.WriteElementString("textura", item.Textura);
+
+                escritor.WriteEndElement();
+            }
+
+            escritor.WriteEndElement();
+
+            escritor.WriteEndDocument();
+
+            escritor.Close();
         }
     }
 }

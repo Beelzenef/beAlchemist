@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btn_GenPocion = new System.Windows.Forms.Button();
             this.lsB_Resultados = new System.Windows.Forms.ListBox();
             this.picB_Pocima = new System.Windows.Forms.PictureBox();
@@ -41,14 +40,11 @@
             this.genHTML_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genXML_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.info_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sFD_GuardarXML = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Pocima)).BeginInit();
             this.grB_Contador.SuspendLayout();
             this.menuUsuario.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // btn_GenPocion
             // 
@@ -70,7 +66,7 @@
             // 
             // picB_Pocima
             // 
-            this.picB_Pocima.Image = global::GeneradorPociones.recursos.pocima;
+            this.picB_Pocima.Image = global::GeneradorPociones.recursos.pxA_pocion;
             this.picB_Pocima.InitialImage = null;
             this.picB_Pocima.Location = new System.Drawing.Point(12, 35);
             this.picB_Pocima.Name = "picB_Pocima";
@@ -142,14 +138,16 @@
             // genHTML_MenuItem
             // 
             this.genHTML_MenuItem.Name = "genHTML_MenuItem";
-            this.genHTML_MenuItem.Size = new System.Drawing.Size(117, 24);
+            this.genHTML_MenuItem.Size = new System.Drawing.Size(152, 24);
             this.genHTML_MenuItem.Text = "HTML";
+            this.genHTML_MenuItem.Click += new System.EventHandler(this.genHTML_MenuItem_Click);
             // 
             // genXML_MenuItem
             // 
             this.genXML_MenuItem.Name = "genXML_MenuItem";
-            this.genXML_MenuItem.Size = new System.Drawing.Size(117, 24);
+            this.genXML_MenuItem.Size = new System.Drawing.Size(152, 24);
             this.genXML_MenuItem.Text = "XML";
+            this.genXML_MenuItem.Click += new System.EventHandler(this.genXML_MenuItem_Click);
             // 
             // info_MenuItem
             // 
@@ -159,6 +157,12 @@
             this.info_MenuItem.Size = new System.Drawing.Size(128, 24);
             this.info_MenuItem.Text = "Desarrollador";
             this.info_MenuItem.Click += new System.EventHandler(this.info_MenuItem_Click);
+            // 
+            // sFD_GuardarXML
+            // 
+            this.sFD_GuardarXML.DefaultExt = "xml";
+            this.sFD_GuardarXML.FileName = "XML";
+            this.sFD_GuardarXML.Filter = "XML | *.xml";
             // 
             // formPociones
             // 
@@ -187,8 +191,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btn_GenPocion;
         private System.Windows.Forms.ListBox lsB_Resultados;
         private System.Windows.Forms.PictureBox picB_Pocima;
@@ -201,6 +203,7 @@
         private System.Windows.Forms.ToolStripMenuItem genHTML_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem genXML_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem info_MenuItem;
+        private System.Windows.Forms.SaveFileDialog sFD_GuardarXML;
     }
 }
 
