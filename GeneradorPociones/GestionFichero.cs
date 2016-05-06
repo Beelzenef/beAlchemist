@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 // -----
 using System.IO;
-using System.Collections;
 using System.Xml;
+using System.Xml.Xsl;
 
 namespace GeneradorPociones
 {
@@ -34,7 +30,7 @@ namespace GeneradorPociones
             aspectoSec = lineas[3].Split(';');
             textura = lineas[4].Split(';');
             efectoSec = lineas[5].Split(';');
-            poder = lineas[5].Split(';');
+            poder = lineas[6].Split(';');
 
         }
 
@@ -67,5 +63,18 @@ namespace GeneradorPociones
 
             escritor.Close();
         }
+
+        public static void GenerarHTML(string ruta)
+        {
+            string rutaXSL = @"..\..\pociones.xsl";
+            Path.ChangeExtension(ruta, ".html");
+
+            XslCompiledTransform myXslTransform = new XslCompiledTransform();
+            myXslTransform.Load(rutaXSL);
+            myXslTransform.Transform("temp.xml", ruta);
+            File.Delete("tmp.xml");
+        }
+
+
     }
 }

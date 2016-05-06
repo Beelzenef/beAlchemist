@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GeneradorPociones
@@ -24,6 +18,7 @@ namespace GeneradorPociones
 
         private void GenerarPocima(object sender, EventArgs e)
         {
+            lbl_NPociones.Text = contadorPociones++.ToString();
             // Generando pociones
 
             Pocion unaPocion = new Pocion();
@@ -36,7 +31,6 @@ namespace GeneradorPociones
             lsB_Resultados.Items.Add("Textura: " + unaPocion.Textura);
 
             lsB_Resultados.Items.Add("");
-            lbl_NPociones.Text = contadorPociones++.ToString();
 
             listaPoc.Add(unaPocion);
         }
@@ -60,7 +54,11 @@ namespace GeneradorPociones
 
         private void genHTML_MenuItem_Click(object sender, EventArgs e)
         {
-
+            if (sFD_GuardarHTML.ShowDialog() != DialogResult.OK)
+                return;
+            GestionFichero.GenerarXML(listaPoc, "tmp.xml");
+            //GestionFichero.GenerarHTML(sFD_GuardarHTML.FileName);
         }
+
     }
 }

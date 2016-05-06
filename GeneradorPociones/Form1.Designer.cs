@@ -41,6 +41,7 @@
             this.genXML_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.info_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sFD_GuardarXML = new System.Windows.Forms.SaveFileDialog();
+            this.sFD_GuardarHTML = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Pocima)).BeginInit();
             this.grB_Contador.SuspendLayout();
             this.menuUsuario.SuspendLayout();
@@ -164,6 +165,12 @@
             this.sFD_GuardarXML.FileName = "XML";
             this.sFD_GuardarXML.Filter = "XML | *.xml";
             // 
+            // sFD_GuardarHTML
+            // 
+            this.sFD_GuardarHTML.DefaultExt = "html";
+            this.sFD_GuardarHTML.FileName = "HTML";
+            this.sFD_GuardarHTML.Filter = "HTML | *.html | HTM | *.htm";
+            // 
             // formPociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +211,7 @@
         private System.Windows.Forms.ToolStripMenuItem genXML_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem info_MenuItem;
         private System.Windows.Forms.SaveFileDialog sFD_GuardarXML;
+        private System.Windows.Forms.SaveFileDialog sFD_GuardarHTML;
     }
 }
 
