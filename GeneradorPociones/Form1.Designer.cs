@@ -42,6 +42,7 @@
             this.info_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sFD_GuardarXML = new System.Windows.Forms.SaveFileDialog();
             this.sFD_GuardarHTML = new System.Windows.Forms.SaveFileDialog();
+            this.chkLSB_Elementos = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Pocima)).BeginInit();
             this.grB_Contador.SuspendLayout();
             this.menuUsuario.SuspendLayout();
@@ -49,7 +50,7 @@
             // 
             // btn_GenPocion
             // 
-            this.btn_GenPocion.Location = new System.Drawing.Point(12, 147);
+            this.btn_GenPocion.Location = new System.Drawing.Point(12, 256);
             this.btn_GenPocion.Name = "btn_GenPocion";
             this.btn_GenPocion.Size = new System.Drawing.Size(101, 35);
             this.btn_GenPocion.TabIndex = 0;
@@ -62,7 +63,7 @@
             this.lsB_Resultados.FormattingEnabled = true;
             this.lsB_Resultados.Location = new System.Drawing.Point(119, 35);
             this.lsB_Resultados.Name = "lsB_Resultados";
-            this.lsB_Resultados.Size = new System.Drawing.Size(421, 199);
+            this.lsB_Resultados.Size = new System.Drawing.Size(421, 303);
             this.lsB_Resultados.TabIndex = 1;
             // 
             // picB_Pocima
@@ -80,7 +81,7 @@
             // 
             this.grB_Contador.Controls.Add(this.lbl_NPociones);
             this.grB_Contador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grB_Contador.Location = new System.Drawing.Point(12, 188);
+            this.grB_Contador.Location = new System.Drawing.Point(12, 297);
             this.grB_Contador.Name = "grB_Contador";
             this.grB_Contador.Size = new System.Drawing.Size(101, 48);
             this.grB_Contador.TabIndex = 4;
@@ -139,14 +140,14 @@
             // genHTML_MenuItem
             // 
             this.genHTML_MenuItem.Name = "genHTML_MenuItem";
-            this.genHTML_MenuItem.Size = new System.Drawing.Size(152, 24);
+            this.genHTML_MenuItem.Size = new System.Drawing.Size(117, 24);
             this.genHTML_MenuItem.Text = "HTML";
             this.genHTML_MenuItem.Click += new System.EventHandler(this.genHTML_MenuItem_Click);
             // 
             // genXML_MenuItem
             // 
             this.genXML_MenuItem.Name = "genXML_MenuItem";
-            this.genXML_MenuItem.Size = new System.Drawing.Size(152, 24);
+            this.genXML_MenuItem.Size = new System.Drawing.Size(117, 24);
             this.genXML_MenuItem.Text = "XML";
             this.genXML_MenuItem.Click += new System.EventHandler(this.genXML_MenuItem_Click);
             // 
@@ -171,13 +172,30 @@
             this.sFD_GuardarHTML.FileName = "HTML";
             this.sFD_GuardarHTML.Filter = "HTML | *.html | HTM | *.htm";
             // 
+            // chkLSB_Elementos
+            // 
+            this.chkLSB_Elementos.FormattingEnabled = true;
+            this.chkLSB_Elementos.Items.AddRange(new object[] {
+            "Contenedor",
+            "Detalles",
+            "Textura",
+            "Olor",
+            "Sabor",
+            "Etiqueta"});
+            this.chkLSB_Elementos.Location = new System.Drawing.Point(7, 156);
+            this.chkLSB_Elementos.Name = "chkLSB_Elementos";
+            this.chkLSB_Elementos.Size = new System.Drawing.Size(106, 94);
+            this.chkLSB_Elementos.TabIndex = 6;
+            this.chkLSB_Elementos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkLSB_Elementos_ItemCheck);
+            // 
             // formPociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(552, 250);
+            this.ClientSize = new System.Drawing.Size(552, 348);
+            this.Controls.Add(this.chkLSB_Elementos);
             this.Controls.Add(this.grB_Contador);
             this.Controls.Add(this.picB_Pocima);
             this.Controls.Add(this.lsB_Resultados);
@@ -212,6 +230,7 @@
         private System.Windows.Forms.ToolStripMenuItem info_MenuItem;
         private System.Windows.Forms.SaveFileDialog sFD_GuardarXML;
         private System.Windows.Forms.SaveFileDialog sFD_GuardarHTML;
+        private System.Windows.Forms.CheckedListBox chkLSB_Elementos;
     }
 }
 

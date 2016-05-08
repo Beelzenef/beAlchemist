@@ -24,7 +24,7 @@ namespace GeneradorPociones
             Pocion unaPocion = new Pocion();
             lsB_Resultados.Items.Add("Tipo: " + unaPocion.Tipo);
             lsB_Resultados.Items.Add("Poder: " + unaPocion.Poder);
-            lsB_Resultados.Items.Add("Efecto primario: " + unaPocion.EfectoPrim);
+            lsB_Resultados.Items.Add("Efecto: " + unaPocion.EfectoPrim);
             lsB_Resultados.Items.Add("Efecto secundario: " + unaPocion.EfectoSec);
             lsB_Resultados.Items.Add("Color: " + unaPocion.Color);
             lsB_Resultados.Items.Add("Detalles: " + unaPocion.Detalle);
@@ -60,5 +60,31 @@ namespace GeneradorPociones
             //GestionFichero.GenerarHTML(sFD_GuardarHTML.FileName);
         }
 
+        #region Modificando constructor
+
+        bool incluirTextura = false;
+        bool incluirOlor = false;
+        bool incluirSabor = false;
+        bool incluirEtiqueta = false;
+        bool incluirContenedor = false;
+        bool incluirDetalles = false;
+
+        private void chkLSB_Elementos_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (chkLSB_Elementos.SelectedIndex == 0)
+                incluirContenedor = !incluirContenedor;
+            if (chkLSB_Elementos.SelectedIndex == 1)
+                incluirDetalles = !incluirDetalles;
+            if (chkLSB_Elementos.SelectedIndex == 2)
+                incluirTextura = !incluirTextura;
+            if (chkLSB_Elementos.SelectedIndex == 3)
+                incluirOlor = !incluirOlor;
+            if (chkLSB_Elementos.SelectedIndex == 4)
+                incluirSabor = !incluirSabor;
+            if (chkLSB_Elementos.SelectedIndex == 5)
+                incluirEtiqueta = !incluirEtiqueta;
+        }
+
+        #endregion
     }
 }
