@@ -96,6 +96,7 @@
     <Content Include="listaParametros.txt" />
     <Content Include="listaEstructura.txt" />
     <Content Include="pociones.xsl" />
+    <None Include="Resources\flask.ico" />
     <None Include="Resources\pxA_pocion.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\content-save.png" />

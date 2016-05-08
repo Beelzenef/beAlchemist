@@ -35,6 +35,8 @@ namespace GeneradorPociones
             listaPoc.Add(unaPocion);
         }
 
+        #region Gestion de menu
+
         private void nuevo_MenuItem_Click(object sender, EventArgs e)
         {
             lsB_Resultados.Items.Clear();
@@ -58,7 +60,9 @@ namespace GeneradorPociones
                 return;
             GestionFichero.GenerarXML(listaPoc, "tmp.xml");
             //GestionFichero.GenerarHTML(sFD_GuardarHTML.FileName);
-        }
+        } 
+
+        #endregion
 
         #region Modificando constructor
 

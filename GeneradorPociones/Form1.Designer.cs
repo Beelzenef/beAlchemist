@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPociones));
             this.btn_GenPocion = new System.Windows.Forms.Button();
             this.lsB_Resultados = new System.Windows.Forms.ListBox();
             this.picB_Pocima = new System.Windows.Forms.PictureBox();
@@ -201,6 +202,7 @@
             this.Controls.Add(this.lsB_Resultados);
             this.Controls.Add(this.btn_GenPocion);
             this.Controls.Add(this.menuUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuUsuario;
             this.MaximizeBox = false;
             this.Name = "formPociones";
