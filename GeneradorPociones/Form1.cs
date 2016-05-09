@@ -18,7 +18,8 @@ namespace GeneradorPociones
 
         private void GenerarPocima(object sender, EventArgs e)
         {
-            lbl_NPociones.Text = contadorPociones++.ToString();
+            contadorPociones++;
+            lbl_NPociones.Text = contadorPociones.ToString();
             // Generando pociones
 
             Pocion unaPocion = new Pocion();
