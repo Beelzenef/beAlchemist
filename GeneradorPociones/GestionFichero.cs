@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Xsl;
 
+
 namespace GeneradorPociones
 {
     class GestionFichero
@@ -27,32 +28,53 @@ namespace GeneradorPociones
 
         public static void GenerarXML(List<Pocion> lista, string ruta)
         {
-            XmlWriter escritor = XmlWriter.Create(ruta);
+            XmlDocument escritor = new XmlDocument();
 
-            escritor.WriteStartDocument();
+            // Declaracion de raíz del documento
+            XmlDeclaration declaracion = escritor.CreateXmlDeclaration("1.0", "UTF-8", null);
+            XmlElement raiz = escritor.DocumentElement;
+            escritor.InsertBefore(declaracion, raiz);
 
-            escritor.WriteStartElement("pociones");
+            // Elemento pociones
+            XmlElement nodoPociones = escritor.CreateElement("pociones");
+            escritor.AppendChild(nodoPociones);
+
 
             foreach (Pocion item in lista)
             {
-                escritor.WriteStartElement("pocion");
+                // Creando elemento pocion 
+                XmlNode pocion = escritor.CreateElement("pocion");
 
-                escritor.WriteElementString("tipo", item.Tipo);
-                escritor.WriteElementString("poder", item.Poder);
-                escritor.WriteElementString("efecto1", item.EfectoPrim);
-                escritor.WriteElementString("efecto2", item.EfectoSec);
-                escritor.WriteElementString("color", item.Color);
-                escritor.WriteElementString("detalles", item.Detalle);
-                escritor.WriteElementString("textura", item.Textura);
 
-                escritor.WriteEndElement();
+                // Generando elementos 
+                XmlNode nodoTipo = escritor.CreateElement("tipo");
+                nodoTipo.InnerText = item.Tipo;
+                pocion.AppendChild(nodoTipo);
+                XmlNode nodoPoder = escritor.CreateElement("poder");
+                nodoPoder.InnerText = item.Poder;
+                pocion.AppendChild(nodoPoder);
+                XmlNode nodoEfectoP = escritor.CreateElement("efectoP");
+                nodoEfectoP.InnerText = item.EfectoPrim;
+                pocion.AppendChild(nodoEfectoP);
+                XmlNode nodoEfectoS = escritor.CreateElement("efectoS");
+                nodoEfectoS.InnerText = item.EfectoSec;
+                pocion.AppendChild(nodoEfectoS);
+                XmlNode nodoColor = escritor.CreateElement("color");
+                nodoColor.InnerText = item.Color;
+                pocion.AppendChild(nodoColor);
+                XmlNode nodoDetalle = escritor.CreateElement("detalle");
+                nodoDetalle.InnerText = item.Detalle;
+                pocion.AppendChild(nodoDetalle);
+                XmlNode nodoTextura = escritor.CreateElement("textura");
+                nodoTextura.InnerText = item.Textura;
+                pocion.AppendChild(nodoTextura);
+                
+                // Agregando la pocion al elemento pociones una vez completo
+                nodoPociones.AppendChild(pocion);
+
             }
-
-            escritor.WriteEndElement();
-
-            escritor.WriteEndDocument();
-
-            escritor.Close();
+            // Guardando fichero
+            escritor.Save(ruta);
         }
 
         public static void GenerarHTML(string ruta)
