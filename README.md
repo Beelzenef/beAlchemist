@@ -24,6 +24,8 @@ Metas:
 - [ ] Selección de elementos que se generarán en la poción
 - [x] Generacion de XML con las pociones creadas 
 - [ ] Generación de HTML en tablas a través de XML
+- [ ] Generación de RTF
+- [ ] Nombrar pociones
 
 **Elena Guzman - BeelCode**
 
