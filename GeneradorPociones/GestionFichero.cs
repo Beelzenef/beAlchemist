@@ -26,7 +26,7 @@ namespace GeneradorPociones
 
         }
 
-        public static void GenerarXML(List<Pocion> lista, string ruta)
+        public static string GenerarXML(List<Pocion> lista)
         {
             XmlDocument escritor = new XmlDocument();
 
@@ -68,24 +68,30 @@ namespace GeneradorPociones
                 XmlNode nodoTextura = escritor.CreateElement("textura");
                 nodoTextura.InnerText = item.Textura;
                 pocion.AppendChild(nodoTextura);
-                
+
                 // Agregando la pocion al elemento pociones una vez completo
                 nodoPociones.AppendChild(pocion);
 
             }
             // Guardando fichero
-            escritor.Save(ruta);
+            //escritor.Save(ruta);
+
+
+            return escritor.OuterXml;
         }
 
-        public static void GenerarHTML(string ruta)
+        public static void GenerarHTML(string contenido, string ruta)
         {
             string rutaXSL = @"..\..\pociones.xsl";
-            Path.ChangeExtension(ruta, ".html");
 
-            XslCompiledTransform myXslTransform = new XslCompiledTransform();
-            myXslTransform.Load(rutaXSL);
-            myXslTransform.Transform("temp.xml", ruta);
-            File.Delete("tmp.xml");
+            XslCompiledTransform transformador = new XslCompiledTransform();
+            transformador.Load(rutaXSL);
+            //transformador.Transform("omg", ruta);
+        }
+
+        public static void GuardarXML(string contenido, string ruta)
+        {
+            File.WriteAllText(ruta, contenido);
         }
 
 

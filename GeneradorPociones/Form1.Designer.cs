@@ -141,14 +141,14 @@
             // genHTML_MenuItem
             // 
             this.genHTML_MenuItem.Name = "genHTML_MenuItem";
-            this.genHTML_MenuItem.Size = new System.Drawing.Size(117, 24);
+            this.genHTML_MenuItem.Size = new System.Drawing.Size(152, 24);
             this.genHTML_MenuItem.Text = "HTML";
             this.genHTML_MenuItem.Click += new System.EventHandler(this.genHTML_MenuItem_Click);
             // 
             // genXML_MenuItem
             // 
             this.genXML_MenuItem.Name = "genXML_MenuItem";
-            this.genXML_MenuItem.Size = new System.Drawing.Size(117, 24);
+            this.genXML_MenuItem.Size = new System.Drawing.Size(152, 24);
             this.genXML_MenuItem.Text = "XML";
             this.genXML_MenuItem.Click += new System.EventHandler(this.genXML_MenuItem_Click);
             // 

@@ -52,14 +52,14 @@ namespace GeneradorPociones
         {
             if (sFD_GuardarXML.ShowDialog() != DialogResult.OK)
                 return;
-            GestionFichero.GenerarXML(listaPoc, sFD_GuardarXML.FileName);
+            GestionFichero.GuardarXML(GestionFichero.GenerarXML(listaPoc), sFD_GuardarXML.FileName);
         }
 
         private void genHTML_MenuItem_Click(object sender, EventArgs e)
         {
             if (sFD_GuardarHTML.ShowDialog() != DialogResult.OK)
                 return;
-            GestionFichero.GenerarXML(listaPoc, "tmp.xml");
+            //GestionFichero.GenerarXML(listaPoc, "tmp.xml");
             //GestionFichero.GenerarHTML(sFD_GuardarHTML.FileName);
         } 
 
