@@ -44,6 +44,8 @@
             this.sFD_GuardarXML = new System.Windows.Forms.SaveFileDialog();
             this.sFD_GuardarHTML = new System.Windows.Forms.SaveFileDialog();
             this.chkLSB_Elementos = new System.Windows.Forms.CheckedListBox();
+            this.rTFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sFD_GuardarRTF = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Pocima)).BeginInit();
             this.grB_Contador.SuspendLayout();
             this.menuUsuario.SuspendLayout();
@@ -131,7 +133,8 @@
             // 
             this.guardar_MenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.genHTML_MenuItem,
-            this.genXML_MenuItem});
+            this.genXML_MenuItem,
+            this.rTFToolStripMenuItem});
             this.guardar_MenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.guardar_MenuItem.Image = global::GeneradorPociones.recursos.content_save;
             this.guardar_MenuItem.Name = "guardar_MenuItem";
@@ -189,6 +192,19 @@
             this.chkLSB_Elementos.TabIndex = 6;
             this.chkLSB_Elementos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkLSB_Elementos_ItemCheck);
             // 
+            // rTFToolStripMenuItem
+            // 
+            this.rTFToolStripMenuItem.Name = "rTFToolStripMenuItem";
+            this.rTFToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.rTFToolStripMenuItem.Text = "RTF";
+            this.rTFToolStripMenuItem.Click += new System.EventHandler(this.genRTF_MenuItem_Click);
+            // 
+            // sFD_GuardarRTF
+            // 
+            this.sFD_GuardarRTF.DefaultExt = "rtf";
+            this.sFD_GuardarRTF.FileName = "Fichero RTF";
+            this.sFD_GuardarRTF.Filter = "RTF | *.RTF";
+            // 
             // formPociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +249,8 @@
         private System.Windows.Forms.SaveFileDialog sFD_GuardarXML;
         private System.Windows.Forms.SaveFileDialog sFD_GuardarHTML;
         private System.Windows.Forms.CheckedListBox chkLSB_Elementos;
+        private System.Windows.Forms.ToolStripMenuItem rTFToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog sFD_GuardarRTF;
     }
 }
 

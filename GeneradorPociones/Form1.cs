@@ -53,6 +53,7 @@ namespace GeneradorPociones
             if (sFD_GuardarXML.ShowDialog() != DialogResult.OK)
                 return;
             GestionFichero.GuardarXML(GestionFichero.GenerarXML(listaPoc), sFD_GuardarXML.FileName);
+            sFD_GuardarXML.FileName = "Fichero XML";
         }
 
         private void genHTML_MenuItem_Click(object sender, EventArgs e)
@@ -61,7 +62,23 @@ namespace GeneradorPociones
                 return;
             //GestionFichero.GenerarXML(listaPoc, "tmp.xml");
             //GestionFichero.GenerarHTML(sFD_GuardarHTML.FileName);
-        } 
+            sFD_GuardarHTML.FileName = "Fichero HTM(L)";
+        }
+
+        private void genRTF_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (sFD_GuardarRTF.ShowDialog() != DialogResult.OK)
+                return;
+            try
+            {
+                GestionFichero.GenerarRTF(listaPoc, sFD_GuardarRTF.FileName);
+            }
+            catch
+            {
+                MessageBox.Show("Imposible guardar, el fichero está abierto");
+            }
+            sFD_GuardarRTF.FileName = "Fichero RTF";
+        }
 
         #endregion
 
@@ -90,6 +107,9 @@ namespace GeneradorPociones
                 incluirEtiqueta = !incluirEtiqueta;
         }
 
+
         #endregion
+
+
     }
 }

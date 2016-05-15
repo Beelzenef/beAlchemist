@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 // -----
 using System.IO;
 using System.Xml;
@@ -92,6 +93,27 @@ namespace GeneradorPociones
         public static void GuardarXML(string contenido, string ruta)
         {
             File.WriteAllText(ruta, contenido);
+        }
+
+        public static void GenerarRTF(List<Pocion> lista, string ruta)
+        {
+            string texto = string.Empty;
+            string nl = Environment.NewLine;
+
+
+            foreach (Pocion item in lista)
+            {
+                texto +=
+                    item.Tipo + nl +
+                    item.Poder + 
+                    item.EfectoPrim +
+                    item.EfectoSec + nl +
+                    item.Color + nl +
+                    item.Detalle + nl +
+                    item.Textura
+                    + nl + nl;
+            }
+            File.WriteAllText(ruta, texto, System.Text.Encoding.UTF8);
         }
 
 
