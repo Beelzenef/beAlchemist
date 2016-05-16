@@ -27,7 +27,7 @@ namespace GeneradorPociones
 
         }
 
-        public static string GenerarXML(List<Pocion> lista)
+        public void GenerarXML(List<Pocion> lista, string ruta)
         {
             XmlDocument escritor = new XmlDocument();
 
@@ -75,19 +75,15 @@ namespace GeneradorPociones
 
             }
             // Guardando fichero
-            //escritor.Save(ruta);
+            escritor.Save(ruta);
 
 
-            return escritor.OuterXml;
+            //return escritor.OuterXml;
         }
 
-        public static void GenerarHTML(string contenido, string ruta)
+        public static void GenerarHTML(string rutaObtenida, string rutaFinal)
         {
-            string rutaXSL = @"..\..\pociones.xsl";
-
-            XslCompiledTransform transformador = new XslCompiledTransform();
-            transformador.Load(rutaXSL);
-            //transformador.Transform("omg", ruta);
+            
         }
 
         public static void GuardarXML(string contenido, string ruta)
