@@ -23,8 +23,8 @@ Metas:
 - [ ] Incluir todos los elementos
 - [ ] Selección de elementos que se generarán en la poción
 - [x] Generacion de XML con las pociones creadas 
-- [ ] Generación de HTML en tablas a través de XML
-- [ ] Generación de RTF
+- [x] Generación de HTML en tablas a través de XML
+- [x] Generación de RTF
 - [ ] Nombrar pociones
 
 **Elena Guzman - BeelCode**
