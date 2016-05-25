@@ -40,11 +40,11 @@
             this.guardar_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genHTML_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genXML_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rTFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.info_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sFD_GuardarXML = new System.Windows.Forms.SaveFileDialog();
             this.sFD_GuardarHTML = new System.Windows.Forms.SaveFileDialog();
             this.chkLSB_Elementos = new System.Windows.Forms.CheckedListBox();
-            this.rTFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sFD_GuardarRTF = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Pocima)).BeginInit();
             this.grB_Contador.SuspendLayout();
@@ -144,16 +144,23 @@
             // genHTML_MenuItem
             // 
             this.genHTML_MenuItem.Name = "genHTML_MenuItem";
-            this.genHTML_MenuItem.Size = new System.Drawing.Size(152, 24);
+            this.genHTML_MenuItem.Size = new System.Drawing.Size(117, 24);
             this.genHTML_MenuItem.Text = "HTML";
             this.genHTML_MenuItem.Click += new System.EventHandler(this.genHTML_MenuItem_Click);
             // 
             // genXML_MenuItem
             // 
             this.genXML_MenuItem.Name = "genXML_MenuItem";
-            this.genXML_MenuItem.Size = new System.Drawing.Size(152, 24);
+            this.genXML_MenuItem.Size = new System.Drawing.Size(117, 24);
             this.genXML_MenuItem.Text = "XML";
             this.genXML_MenuItem.Click += new System.EventHandler(this.genXML_MenuItem_Click);
+            // 
+            // rTFToolStripMenuItem
+            // 
+            this.rTFToolStripMenuItem.Name = "rTFToolStripMenuItem";
+            this.rTFToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.rTFToolStripMenuItem.Text = "RTF";
+            this.rTFToolStripMenuItem.Click += new System.EventHandler(this.genRTF_MenuItem_Click);
             // 
             // info_MenuItem
             // 
@@ -191,13 +198,6 @@
             this.chkLSB_Elementos.Size = new System.Drawing.Size(106, 94);
             this.chkLSB_Elementos.TabIndex = 6;
             this.chkLSB_Elementos.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkLSB_Elementos_ItemCheck);
-            // 
-            // rTFToolStripMenuItem
-            // 
-            this.rTFToolStripMenuItem.Name = "rTFToolStripMenuItem";
-            this.rTFToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.rTFToolStripMenuItem.Text = "RTF";
-            this.rTFToolStripMenuItem.Click += new System.EventHandler(this.genRTF_MenuItem_Click);
             // 
             // sFD_GuardarRTF
             // 

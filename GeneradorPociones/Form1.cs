@@ -52,17 +52,17 @@ namespace GeneradorPociones
         {
             if (sFD_GuardarXML.ShowDialog() != DialogResult.OK)
                 return;
-            GestionFichero.GuardarXML(GestionFichero.GenerarXML(listaPoc), sFD_GuardarXML.FileName);
+            GestionFichero.GenerarXML(listaPoc, sFD_GuardarXML.FileName);
             sFD_GuardarXML.FileName = "Fichero XML";
         }
 
         private void genHTML_MenuItem_Click(object sender, EventArgs e)
         {
-            if (sFD_GuardarHTML.ShowDialog() != DialogResult.OK)
+            if (sFD_GuardarXML.ShowDialog() != DialogResult.OK)
                 return;
             //GestionFichero.GenerarXML(listaPoc, "tmp.xml");
-            //GestionFichero.GenerarHTML(sFD_GuardarHTML.FileName);
-            sFD_GuardarHTML.FileName = "Fichero HTM(L)";
+            GestionFichero.GenerarHTML(listaPoc, sFD_GuardarXML.FileName);
+            sFD_GuardarXML.FileName = "Fichero HTM(L)";
         }
 
         private void genRTF_MenuItem_Click(object sender, EventArgs e)

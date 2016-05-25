@@ -6,6 +6,7 @@ using System.Xml;
 using System.Xml.Xsl;
 
 
+
 namespace GeneradorPociones
 {
     class GestionFichero
@@ -27,7 +28,7 @@ namespace GeneradorPociones
 
         }
 
-        public void GenerarXML(List<Pocion> lista, string ruta)
+        public static void GenerarXML(List<Pocion> lista, string ruta)
         {
             XmlDocument escritor = new XmlDocument();
 
@@ -81,9 +82,37 @@ namespace GeneradorPociones
             //return escritor.OuterXml;
         }
 
-        public static void GenerarHTML(string rutaObtenida, string rutaFinal)
+        public static void GenerarHTML(List<Pocion> lista, string rutaFinal)
         {
-            
+            XmlDocument escritorHTML = new XmlDocument();
+
+            XmlDeclaration declaracion = escritorHTML.CreateXmlDeclaration("1.0", "UTF-8", null);
+            XmlElement raiz = escritorHTML.DocumentElement;
+            escritorHTML.InsertBefore(declaracion, raiz);
+
+            // Elemento raiz
+            XmlElement html = escritorHTML.CreateElement("html");
+            escritorHTML.AppendChild(html);
+
+            // Creando y configurando HEAD
+            XmlElement head = escritorHTML.CreateElement("head");
+            html.AppendChild(head);
+            XmlNode titutlo = escritorHTML.CreateElement("title");
+            titutlo.InnerText = "Pociones variadas para toda la familia";
+            head.AppendChild(titutlo);
+
+            // Creando y configurando BODY
+            XmlElement body = escritorHTML.CreateElement("body");
+            html.AppendChild(body);
+
+            foreach (Pocion item in lista)
+            {
+                XmlNode parrafo = escritorHTML.CreateElement("p");
+                parrafo.InnerText = item.Detalle;
+                body.AppendChild(parrafo);
+            }
+
+            escritorHTML.Save(rutaFinal);
         }
 
         public static void GuardarXML(string contenido, string ruta)
