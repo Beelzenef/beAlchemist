@@ -178,7 +178,7 @@ namespace GeneradorPociones
 
         public static void CambiarRuta(string ruta)
         {
-            Path.ChangeExtension(ruta, "html");
+            Path.ChangeExtension(ruta, "xhtml");
         }
 
         public static void GuardarXML(string contenido, string ruta)

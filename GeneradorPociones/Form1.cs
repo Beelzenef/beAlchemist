@@ -94,6 +94,11 @@ namespace GeneradorPociones
             sFD_GuardarRTF.FileName = "Fichero RTF";
         }
 
+        private void genPDF_MenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Modificando constructor
@@ -122,8 +127,8 @@ namespace GeneradorPociones
         }
 
 
-        #endregion
 
+        #endregion
 
     }
 }

@@ -46,6 +46,7 @@
             this.sFD_GuardarHTML = new System.Windows.Forms.SaveFileDialog();
             this.chkLSB_Elementos = new System.Windows.Forms.CheckedListBox();
             this.sFD_GuardarRTF = new System.Windows.Forms.SaveFileDialog();
+            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Pocima)).BeginInit();
             this.grB_Contador.SuspendLayout();
             this.menuUsuario.SuspendLayout();
@@ -134,7 +135,8 @@
             this.guardar_MenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.genHTML_MenuItem,
             this.genXML_MenuItem,
-            this.rTFToolStripMenuItem});
+            this.rTFToolStripMenuItem,
+            this.pDFToolStripMenuItem});
             this.guardar_MenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.guardar_MenuItem.Image = global::GeneradorPociones.recursos.content_save;
             this.guardar_MenuItem.Name = "guardar_MenuItem";
@@ -144,21 +146,21 @@
             // genHTML_MenuItem
             // 
             this.genHTML_MenuItem.Name = "genHTML_MenuItem";
-            this.genHTML_MenuItem.Size = new System.Drawing.Size(117, 24);
+            this.genHTML_MenuItem.Size = new System.Drawing.Size(152, 24);
             this.genHTML_MenuItem.Text = "HTML";
             this.genHTML_MenuItem.Click += new System.EventHandler(this.genHTML_MenuItem_Click);
             // 
             // genXML_MenuItem
             // 
             this.genXML_MenuItem.Name = "genXML_MenuItem";
-            this.genXML_MenuItem.Size = new System.Drawing.Size(117, 24);
+            this.genXML_MenuItem.Size = new System.Drawing.Size(152, 24);
             this.genXML_MenuItem.Text = "XML";
             this.genXML_MenuItem.Click += new System.EventHandler(this.genXML_MenuItem_Click);
             // 
             // rTFToolStripMenuItem
             // 
             this.rTFToolStripMenuItem.Name = "rTFToolStripMenuItem";
-            this.rTFToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.rTFToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.rTFToolStripMenuItem.Text = "RTF";
             this.rTFToolStripMenuItem.Click += new System.EventHandler(this.genRTF_MenuItem_Click);
             // 
@@ -204,6 +206,13 @@
             this.sFD_GuardarRTF.DefaultExt = "rtf";
             this.sFD_GuardarRTF.FileName = "Fichero RTF";
             this.sFD_GuardarRTF.Filter = "RTF | *.RTF";
+            // 
+            // pDFToolStripMenuItem
+            // 
+            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.pDFToolStripMenuItem.Text = "PDF";
+            this.pDFToolStripMenuItem.Click += new System.EventHandler(this.genPDF_MenuItem_Click);
             // 
             // formPociones
             // 
@@ -251,6 +260,7 @@
         private System.Windows.Forms.CheckedListBox chkLSB_Elementos;
         private System.Windows.Forms.ToolStripMenuItem rTFToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sFD_GuardarRTF;
+        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
     }
 }
 
