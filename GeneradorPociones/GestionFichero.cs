@@ -3,9 +3,6 @@ using System;
 // -----
 using System.IO;
 using System.Xml;
-using System.Xml.Xsl;
-
-
 
 namespace GeneradorPociones
 {
@@ -105,6 +102,10 @@ namespace GeneradorPociones
             XmlElement body = escritorHTML.CreateElement("body");
             html.AppendChild(body);
 
+            XmlElement header = escritorHTML.CreateElement("h1");
+            header.InnerText = "Pociones";
+            body.AppendChild(header);
+
             foreach (Pocion item in lista)
             {
                 // TABLE y HEADERS
@@ -144,9 +145,10 @@ namespace GeneradorPociones
 
                 tabla.AppendChild(filaH);
 
+                // Nueva fila para informacion
                 XmlNode fila = escritorHTML.CreateElement("tr");
 
-                // Añadiendo propiedades a tablas
+                // Elementos de tablas
                 XmlNode celdaPoder = escritorHTML.CreateElement("td");
                 celdaPoder.InnerText = item.Poder;
                 fila.AppendChild(celdaPoder);
@@ -170,15 +172,15 @@ namespace GeneradorPociones
                 fila.AppendChild(celdaDet);
 
                 tabla.AppendChild(fila);
+
+                //Salto de linea
+                XmlNode nl = escritorHTML.CreateElement("br");
+                body.AppendChild(nl);
+
                 body.AppendChild(tabla);
             }
 
             escritorHTML.Save(rutaFinal);
-        }
-
-        public static void CambiarRuta(string ruta)
-        {
-            Path.ChangeExtension(ruta, "xhtml");
         }
 
         public static void GuardarXML(string contenido, string ruta)

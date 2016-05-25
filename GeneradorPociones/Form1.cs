@@ -66,17 +66,17 @@ namespace GeneradorPociones
         
         private void genHTML_MenuItem_Click(object sender, EventArgs e)
         {
-            if (sFD_GuardarXML.ShowDialog() != DialogResult.OK)
+            if (sFD_GuardarHTML.ShowDialog() != DialogResult.OK)
                 return;
             try
             {
-                GestionFichero.GenerarHTML(listaPoc, sFD_GuardarXML.FileName);
+                GestionFichero.GenerarHTML(listaPoc, sFD_GuardarHTML.FileName);
             }
             catch
             {
                 MessageBox.Show("Imposible guardar, ¿está abierto el fichero?");
             }
-            sFD_GuardarXML.FileName = "Fichero HTM(L)";
+            sFD_GuardarHTML.FileName = "Fichero HTM(L)";
         }
 
         private void genRTF_MenuItem_Click(object sender, EventArgs e)

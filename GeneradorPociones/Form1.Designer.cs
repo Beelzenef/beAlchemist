@@ -46,7 +46,6 @@
             this.sFD_GuardarHTML = new System.Windows.Forms.SaveFileDialog();
             this.chkLSB_Elementos = new System.Windows.Forms.CheckedListBox();
             this.sFD_GuardarRTF = new System.Windows.Forms.SaveFileDialog();
-            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.picB_Pocima)).BeginInit();
             this.grB_Contador.SuspendLayout();
             this.menuUsuario.SuspendLayout();
@@ -135,8 +134,7 @@
             this.guardar_MenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.genHTML_MenuItem,
             this.genXML_MenuItem,
-            this.rTFToolStripMenuItem,
-            this.pDFToolStripMenuItem});
+            this.rTFToolStripMenuItem});
             this.guardar_MenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.guardar_MenuItem.Image = global::GeneradorPociones.recursos.content_save;
             this.guardar_MenuItem.Name = "guardar_MenuItem";
@@ -207,13 +205,6 @@
             this.sFD_GuardarRTF.FileName = "Fichero RTF";
             this.sFD_GuardarRTF.Filter = "RTF | *.RTF";
             // 
-            // pDFToolStripMenuItem
-            // 
-            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
-            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.pDFToolStripMenuItem.Text = "PDF";
-            this.pDFToolStripMenuItem.Click += new System.EventHandler(this.genPDF_MenuItem_Click);
-            // 
             // formPociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,7 +251,6 @@
         private System.Windows.Forms.CheckedListBox chkLSB_Elementos;
         private System.Windows.Forms.ToolStripMenuItem rTFToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sFD_GuardarRTF;
-        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
     }
 }
 
