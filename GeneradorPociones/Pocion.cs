@@ -177,10 +177,7 @@ namespace GeneradorPociones
              "Poción", "Elixir", "Brebaje", "Vial", "Filtro", "Tónico", "Infusión", "Icor", "Zumo", "Mezcla"
         };
 
-        List<string> listaTextura = new List<string>()
-        {
-            "Gruesa y lodosa", "Fina y acuosa;", "Vaporosa y burbujeante", "Babosa", "Casi sólida", "Aceitosa", "Maciza", "Fragmentaria", "Lechosa", "Casi gaseosa"
-        };
+        
 
         List<string> listaPoder = new List<string>()
         {
@@ -195,6 +192,13 @@ namespace GeneradorPociones
             "Amarillo", "Naranja", "Dorada", "Plateada", "Bronce", "Metálica", "Morada", "Marrón", "Rojo oscuro"
         };
 
+       
+
+        List<string> listaContenedores = new List<string>()
+        {
+
+        };
+
         List<string> listaDetalle = new List<string>()
         {
             "Manchas de color", "Remolinos de color", "Burbujas ruidosas", "Burbujas suspendidas", "Algún tipo de hueso flotando…", "Hojas y flores flotando", "Dos líquidos diferenciables",
@@ -202,18 +206,83 @@ namespace GeneradorPociones
             "Vapor emanando", "Un rostro reflejado en el líquido", "Un líquido en constante cambio y movimiento", "Un calor constante."
             };
 
+        List<string> listaTextura = new List<string>()
+        {
+            "Gruesa y lodosa", "Fina y acuosa;", "Vaporosa y burbujeante", "Babosa", "Casi sólida", "Aceitosa", "Maciza", "Fragmentaria", "Lechosa", "Casi gaseosa"
+        };
+
+        List<string> listaOlor = new List<string>()
+        {
+
+        };
+
+        List<string> listaSabor = new List<string>()
+        {
+
+        };
+
+        List<string> listaEtiquetas = new List<string>()
+        {
+
+        };
+
         #endregion
 
         // Constructores
-        public Pocion()
+        public Pocion(int opcion)
         {
             this.Tipo = listaTipos[new Random().Next(0, listaTipos.Count)].ToString();
             this.Poder = listaPoder[new Random().Next(0, listaPoder.Count)].ToString();
             this.EfectoPrim = GestionFichero.efectoPrim[new Random().Next(0, GestionFichero.efectoPrim.Length)].ToString();
             this.EfectoSec = GestionFichero.efectoSec[new Random().Next(0, GestionFichero.efectoSec.Length)].ToString();
             this.Color = listaColor[new Random().Next(0, listaColor.Count)].ToString();
-            this.Detalle = listaDetalle[new Random().Next(0, listaDetalle.Count)].ToString();
+
+            if (opcion == 1)
+                AnadirSetCE();
+            else if (opcion == 2)
+                AnadirSetTOS();
+            else if (opcion == 3)
+            {
+                AnadirSetCE();
+                AnadirSetTOS();
+            }
+            else if (opcion == 4)
+                AnadirD();
+            else if (opcion == 5)
+            {
+                AnadirSetCE();
+                AnadirD();
+            }
+            else if (opcion == 6)
+            {
+                AnadirSetTOS();
+                AnadirD();
+            }
+            else if (opcion == 7)
+            {
+                AnadirD();
+                AnadirSetCE();
+                AnadirSetTOS();
+            }
+
+        }
+
+        private void AnadirSetTOS()
+        {
             this.Textura = listaTextura[new Random().Next(0, listaTextura.Count)].ToString();
+            this.Olor = listaOlor[new Random().Next(0, listaOlor.Count)].ToString();
+            this.Sabor = listaSabor[new Random().Next(0, listaSabor.Count)].ToString();
+        }
+
+        private void AnadirSetCE()
+        {
+            this.Contenedor = listaContenedores[new Random().Next(0, listaTextura.Count)].ToString();
+            this.Olor = listaEtiquetas[new Random().Next(0, listaOlor.Count)].ToString();
+        }
+
+        private void AnadirD()
+        {
+            this.Detalle = listaDetalle[new Random().Next(0, listaDetalle.Count)].ToString();
         }
     }
 }

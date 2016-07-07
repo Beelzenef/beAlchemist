@@ -13,6 +13,7 @@ namespace GeneradorPociones
         }
 
         int contadorPociones = 0;
+        int marcandoOpciones = 0;
 
         List<Pocion> listaPoc = new List<Pocion>();
 
@@ -22,7 +23,7 @@ namespace GeneradorPociones
             lbl_NPociones.Text = contadorPociones.ToString();
             // Generando pociones
 
-            Pocion unaPocion = new Pocion();
+            Pocion unaPocion = new Pocion(marcandoOpciones);
             lsB_Resultados.Items.Add("Tipo: " + unaPocion.Tipo);
             lsB_Resultados.Items.Add("Poder: " + unaPocion.Poder);
             lsB_Resultados.Items.Add("Efecto: " + unaPocion.EfectoPrim);
