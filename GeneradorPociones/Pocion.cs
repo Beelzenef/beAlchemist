@@ -14,11 +14,17 @@ namespace GeneradorPociones
         // Campos
         string _tipo;
         string _color;
-        string _detalle;
         string _efectoPrim;
         string _efectoSec;
         string _poder;
+
+        // Campos a seleccionar en checkboxes
+        string _contenedor;
+        string _detalle;
         string _textura;
+        string _olor;
+        string _sabor;
+        string _etiqueta;
 
         #region Propiedades
 
@@ -41,18 +47,7 @@ namespace GeneradorPociones
             }
         }
 
-        public string Detalle
-        {
-            get
-            {
-                return _detalle;
-            }
-
-            set
-            {
-                _detalle = value;
-            }
-        }
+        
 
         public string EfectoPrim
         {
@@ -93,6 +88,34 @@ namespace GeneradorPociones
             }
         }
 
+        // Props en checkboxes
+
+        public string Contenedor
+        {
+            get
+            {
+                return _contenedor;
+            }
+
+            set
+            {
+                _contenedor = value;
+            }
+        }
+
+        public string Detalle
+        {
+            get
+            {
+                return _detalle;
+            }
+
+            set
+            {
+                _detalle = value;
+            }
+        }
+
         public string Textura
         {
             get
@@ -105,6 +128,46 @@ namespace GeneradorPociones
                 _textura = value;
             }
         }
+
+        public string Olor
+        {
+            get
+            {
+                return _olor;
+            }
+
+            set
+            {
+                _olor = value;
+            }
+        }
+
+        public string Sabor
+        {
+            get
+            {
+                return _sabor;
+            }
+
+            set
+            {
+                _sabor = value;
+            }
+        }
+
+        public string Etiqueta
+        {
+            get
+            {
+                return _etiqueta;
+            }
+
+            set
+            {
+                _etiqueta = value;
+            }
+        }
+
         #endregion
 
         #region Listas
