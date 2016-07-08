@@ -94,6 +94,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="listaEtis.txt" />
+    <Content Include="listaOS.txt" />
     <Content Include="listaParametros.txt" />
     <Content Include="listaEstructura.txt" />
     <Content Include="pociones.xsl" />
@@ -101,6 +103,7 @@
     <None Include="Resources\pxA_pocion.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\content-save.png" />
+    <None Include="Resources\Texture1.dds" />
     <None Include="Resources\web.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

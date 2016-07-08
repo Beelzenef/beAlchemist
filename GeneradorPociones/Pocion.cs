@@ -196,7 +196,10 @@ namespace GeneradorPociones
 
         List<string> listaContenedores = new List<string>()
         {
-
+            "Una botella de suave cristal en forma de cono", "Una botella de cristal cuadrada", "Un odre de cuero", "Un matraz de piedra", "Un termo de metal",
+            "Una jeringa de cristal", "Un pequeño frasco médico", "Una botella de pequeño tamaño", "Una botella grande de metal", "Un cuerpo tapado", "Una botella de cristal ricamente decorada",
+            "Un diamante geométrico en forma de botella", "Una botella de vino tralúcida", "Una botella de cerveza traslúcida", "Una bolsa de cuero",
+            "Un inhalador", "Una botella de color", "Un matraz de hueso", "Un pequeño frasco de metal", "Una botella grande que da para varios tragos"
         };
 
         List<string> listaDetalle = new List<string>()
@@ -209,21 +212,6 @@ namespace GeneradorPociones
         List<string> listaTextura = new List<string>()
         {
             "Gruesa y lodosa", "Fina y acuosa;", "Vaporosa y burbujeante", "Babosa", "Casi sólida", "Aceitosa", "Maciza", "Fragmentaria", "Lechosa", "Casi gaseosa"
-        };
-
-        List<string> listaOlor = new List<string>()
-        {
-
-        };
-
-        List<string> listaSabor = new List<string>()
-        {
-
-        };
-
-        List<string> listaEtiquetas = new List<string>()
-        {
-
         };
 
         #endregion
@@ -270,14 +258,14 @@ namespace GeneradorPociones
         private void AnadirSetTOS()
         {
             this.Textura = listaTextura[new Random().Next(0, listaTextura.Count)].ToString();
-            this.Olor = listaOlor[new Random().Next(0, listaOlor.Count)].ToString();
-            this.Sabor = listaSabor[new Random().Next(0, listaSabor.Count)].ToString();
+            this.Olor = GestionFichero.listaOS[new Random().Next(0, GestionFichero.listaOS.Length)].ToString();
+            this.Sabor = GestionFichero.listaOS[new Random().Next(0, GestionFichero.listaOS.Length)].ToString();
         }
 
         private void AnadirSetCE()
         {
             this.Contenedor = listaContenedores[new Random().Next(0, listaTextura.Count)].ToString();
-            this.Olor = listaEtiquetas[new Random().Next(0, listaOlor.Count)].ToString();
+            this.Etiqueta = GestionFichero.listaEtis[new Random().Next(0, GestionFichero.listaEtis.Length)].ToString();
         }
 
         private void AnadirD()

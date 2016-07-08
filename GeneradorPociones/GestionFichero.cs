@@ -8,12 +8,16 @@ namespace GeneradorPociones
 {
     class GestionFichero
     {
-        public static string separador = Path.DirectorySeparatorChar.ToString();
-        public static string rutaFicheroPocimas = @"..\..\listaParametros.txt";
+        static string separador = Path.DirectorySeparatorChar.ToString();
+        static string rutaFicheroPocimas = @"..\..\listaParametros.txt";
+        static string ficheroOS = @"..\..\listaOS.txt";
+        static string ficheroETIS = @"..\..\listaOS.txt";
         public static string[] lineas;
 
         public static string[] efectoPrim;
         public static string[] efectoSec;
+        public static string[] listaOS;
+        public static string[] listaEtis;
 
         public static void LeerFichero()
         {
@@ -22,6 +26,9 @@ namespace GeneradorPociones
 
             efectoPrim = lineas[0].Split(';');
             efectoSec = lineas[1].Split(';');
+
+            listaOS = File.ReadAllLines(ficheroOS);
+            listaEtis = File.ReadAllLines(ficheroETIS);
 
         }
 
