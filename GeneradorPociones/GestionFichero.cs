@@ -68,12 +68,38 @@ namespace GeneradorPociones
                 XmlNode nodoColor = escritor.CreateElement("color");
                 nodoColor.InnerText = item.Color;
                 pocion.AppendChild(nodoColor);
-                XmlNode nodoDetalle = escritor.CreateElement("detalle");
-                nodoDetalle.InnerText = item.Detalle;
-                pocion.AppendChild(nodoDetalle);
-                XmlNode nodoTextura = escritor.CreateElement("textura");
-                nodoTextura.InnerText = item.Textura;
-                pocion.AppendChild(nodoTextura);
+
+                if (item.Etiqueta != null)
+                {
+                    XmlNode nodoEtiqueta = escritor.CreateElement("etiqueta");
+                    nodoEtiqueta.InnerText = item.Etiqueta;
+                    pocion.AppendChild(nodoEtiqueta);
+
+                    XmlNode nodoContenedor = escritor.CreateElement("contenedor");
+                    nodoContenedor.InnerText = item.Contenedor;
+                    pocion.AppendChild(nodoContenedor);
+                }
+
+                if (item.Textura != null)
+                {
+                    XmlNode nodoTextura = escritor.CreateElement("textura");
+                    nodoTextura.InnerText = item.Textura;
+                    pocion.AppendChild(nodoTextura);
+                    XmlNode nodoOlor = escritor.CreateElement("olor");
+                    nodoOlor.InnerText = item.Olor;
+                    pocion.AppendChild(nodoOlor);
+                    XmlNode nodoSabor = escritor.CreateElement("sabor");
+                    nodoSabor.InnerText = item.Sabor;
+                    pocion.AppendChild(nodoSabor);
+                }
+
+                if (item.Detalle != null)
+                {
+                    XmlNode nodoDetalle = escritor.CreateElement("detalle");
+                    nodoDetalle.InnerText = item.Detalle;
+                    pocion.AppendChild(nodoDetalle);
+                }
+
 
                 // Agregando la pocion al elemento pociones una vez completo
                 nodoPociones.AppendChild(pocion);
