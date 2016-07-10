@@ -20,8 +20,8 @@ Elementos a generar:
 Metas:
 
 - [x] Generación de pociones
-- [ ] Incluir todos los elementos
-- [ ] Selección de elementos que se generarán en la poción
+- [x] Incluir todos los elementos
+- [x] Selección de elementos que se generarán en la poción
 - [x] Generacion de XML con las pociones creadas 
 - [x] Generación de HTML en tablas a través de XML
 - [x] Generación de RTF
