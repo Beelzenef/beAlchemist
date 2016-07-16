@@ -14,8 +14,8 @@ namespace GeneradorPociones
         static string ficheroETIS = @"..\..\listaOS.txt";
         public static string[] lineas;
 
-        public static string[] efectoPrim;
-        public static string[] efectoSec;
+        public static string[] listaefectoPrim;
+        public static string[] listaefectoSec;
         public static string[] listaOS;
         public static string[] listaEtis;
 
@@ -24,8 +24,8 @@ namespace GeneradorPociones
             string todo = File.ReadAllText(rutaFicheroPocimas);
             lineas = todo.Split('-');
 
-            efectoPrim = lineas[0].Split(';');
-            efectoSec = lineas[1].Split(';');
+            listaefectoPrim = lineas[0].Split(';');
+            listaefectoSec = lineas[1].Split(';');
 
             listaOS = File.ReadAllLines(ficheroOS);
             listaEtis = File.ReadAllLines(ficheroETIS);
@@ -151,9 +151,9 @@ namespace GeneradorPociones
             clase.Value = "tg-14nr";
             // Otros atributos
             XmlAttribute cols2 = escritorHTML.CreateAttribute("colspan");
-            clase.Value = "2";
+            cols2.Value = "2";
             XmlAttribute cols3 = escritorHTML.CreateAttribute("colspan");
-            clase.Value = "3";
+            cols3.Value = "3";
 
             estiloTablas.InnerText = @" .tg  {border-collapse:collapse;border-spacing:0;}
                                         .tg td { font - family:Arial, sans - serif; font - size:14px; padding: 10px 20px; border - style:solid; border - width:1px; overflow: hidden; word -break:normal;}
@@ -169,12 +169,12 @@ namespace GeneradorPociones
                 XmlNode fila1 = escritorHTML.CreateElement("tr");
 
                 XmlNode thTipo = escritorHTML.CreateElement("td");
-                thTipo.AppendChild(clase);
                 thTipo.InnerText = "Tipo";
+                thTipo.Attributes.Append(clase);
                 XmlNode thEfectoP = escritorHTML.CreateElement("td");
-                thEfectoP.AppendChild(clase);
-                thEfectoP.AppendChild(cols2);
                 thTipo.InnerText = "Efecto primario";
+                thEfectoP.Attributes.Append(clase);
+                thEfectoP.Attributes.Append(cols2);
 
                 fila1.AppendChild(thTipo);
                 fila1.AppendChild(thEfectoP);
@@ -184,17 +184,28 @@ namespace GeneradorPociones
                 XmlNode fila2 = escritorHTML.CreateElement("tr");
                 // Item TEp
 
+                XmlNode tipo = escritorHTML.CreateElement("tr");
+                tipo.InnerText = item.Tipo;
+                XmlNode efectoP = escritorHTML.CreateElement("tr");
+                efectoP.Attributes.Append(cols2);
+                efectoP.InnerText = item.EfectoPrim;
+
+                fila2.AppendChild(tipo);
+                fila2.AppendChild(efectoP);
+
+                tabla.AppendChild(fila2);
+
                 XmlNode fila3 = escritorHTML.CreateElement("tr");
 
                 XmlNode thPoder = escritorHTML.CreateElement("td");
-                thPoder.AppendChild(clase);
                 thPoder.InnerText = "Poder";
+                thPoder.Attributes.Append(clase);
                 XmlNode thEfectoS = escritorHTML.CreateElement("td");
-                thEfectoS.AppendChild(clase);
                 thEfectoS.InnerText = "Efecto secundario";
+                thEfectoS.Attributes.Append(clase);
                 XmlNode thColor = escritorHTML.CreateElement("td");
-                thColor.AppendChild(clase);
                 thColor.InnerText = "Color";
+                thColor.Attributes.Append(clase);
 
                 fila3.AppendChild(thPoder);
                 fila3.AppendChild(thEfectoS);
@@ -205,17 +216,30 @@ namespace GeneradorPociones
                 XmlNode fila4 = escritorHTML.CreateElement("tr");
                 // Item PEsC
 
+                XmlNode poder = escritorHTML.CreateElement("td");
+                poder.InnerText = item.Poder;
+                XmlNode efectoS = escritorHTML.CreateElement("td");
+                efectoS.InnerText = item.EfectoSec;
+                XmlNode color = escritorHTML.CreateElement("td");
+                color.InnerText = item.Color;
+
+                fila4.AppendChild(poder);
+                fila4.AppendChild(efectoS);
+                fila4.AppendChild(color);
+
+                tabla.AppendChild(fila4);
+
                 if (item.Contenedor != null)
                 {
 
                     XmlNode fila5 = escritorHTML.CreateElement("tr");
 
                     XmlElement thContenedor = escritorHTML.CreateElement("td");
-                    thContenedor.AppendChild(clase);
+                    thColor.Attributes.Append(clase);
                     thContenedor.InnerText = "Contenedor";
                     XmlElement thEtiqueta = escritorHTML.CreateElement("td");
-                    thEtiqueta.AppendChild(clase);
-                    thEtiqueta.AppendChild(cols2);
+                    thEtiqueta.Attributes.Append(clase);
+                    thEtiqueta.Attributes.Append(cols2);
                     thEtiqueta.InnerText = "Etiqueta";
 
                     fila5.AppendChild(thContenedor);
@@ -226,6 +250,13 @@ namespace GeneradorPociones
                     XmlNode fila6 = escritorHTML.CreateElement("tr");
                     // Item CE
 
+                    XmlNode contenedor = escritorHTML.CreateElement("td");
+                    contenedor.InnerText = item.Contenedor;
+                    XmlNode etiqueta = escritorHTML.CreateElement("td");
+                    etiqueta.Attributes.Append(cols2);
+                    etiqueta.InnerText = item.Etiqueta;
+
+                    tabla.AppendChild(fila6);
                 }
 
                 if (item.Textura != null)
@@ -234,13 +265,13 @@ namespace GeneradorPociones
                     XmlNode fila7 = escritorHTML.CreateElement("tr");
 
                     XmlElement tdTextura = escritorHTML.CreateElement("td");
-                    tdTextura.AppendChild(clase);
+                    tdTextura.Attributes.Append(clase);
                     tdTextura.InnerText = "Textura";
                     XmlElement tdOlor = escritorHTML.CreateElement("td");
-                    tdOlor.AppendChild(clase);
+                    tdOlor.Attributes.Append(clase);
                     tdOlor.InnerText = "Olor";
                     XmlElement tdSabor = escritorHTML.CreateElement("td");
-                    tdSabor.AppendChild(clase);
+                    tdSabor.Attributes.Append(clase);
                     tdSabor.InnerText = "Sabor";
 
                     fila7.AppendChild(tdTextura);
@@ -249,9 +280,22 @@ namespace GeneradorPociones
 
                     tabla.AppendChild(fila7);
 
-
                     XmlNode fila8 = escritorHTML.CreateElement("tr");
                     // Item TOS
+
+                    XmlNode textura = escritorHTML.CreateElement("td");
+                    textura.InnerText = item.Textura;
+                    XmlNode olor = escritorHTML.CreateElement("td");
+                    olor.InnerText = item.Olor;
+                    XmlNode sabor = escritorHTML.CreateElement("td");
+                    sabor.InnerText = item.Sabor;
+
+                    fila8.AppendChild(textura);
+                    fila8.AppendChild(olor);
+                    fila8.AppendChild(sabor);
+
+                    tabla.AppendChild(fila8);
+
                 }
 
                 if (item.Detalle != null)
@@ -259,8 +303,8 @@ namespace GeneradorPociones
                     XmlNode fila9 = escritorHTML.CreateElement("tr");
 
                     XmlElement thDetalle = escritorHTML.CreateElement("td");
-                    thDetalle.AppendChild(clase);
-                    thDetalle.AppendChild(cols3);
+                    thDetalle.Attributes.Append(clase);
+                    thDetalle.Attributes.Append(cols3);
                     thDetalle.InnerText = "Detalle";
 
                     fila9.AppendChild(thDetalle);
@@ -269,6 +313,14 @@ namespace GeneradorPociones
 
                     XmlNode fila10 = escritorHTML.CreateElement("tr");
                     // Item detalle
+
+                    XmlNode detalle = escritorHTML.CreateElement("td");
+                    detalle.InnerText = item.Detalle;
+                    detalle.Attributes.Append(cols3);
+                    fila10.AppendChild(detalle);
+
+                    tabla.AppendChild(fila10);
+
                 }
                 //Salto de linea
                 XmlNode nl = escritorHTML.CreateElement("br");

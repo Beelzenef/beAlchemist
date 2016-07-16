@@ -221,8 +221,8 @@ namespace GeneradorPociones
         {
             this.Tipo = listaTipos[new Random().Next(0, listaTipos.Count)].ToString();
             this.Poder = listaPoder[new Random().Next(0, listaPoder.Count)].ToString();
-            this.EfectoPrim = GestionFichero.efectoPrim[new Random().Next(0, GestionFichero.efectoPrim.Length)].ToString();
-            this.EfectoSec = GestionFichero.efectoSec[new Random().Next(0, GestionFichero.efectoSec.Length)].ToString();
+            this.EfectoPrim = GestionFichero.listaefectoPrim[new Random().Next(0, GestionFichero.listaefectoPrim.Length)].ToString();
+            this.EfectoSec = GestionFichero.listaefectoSec[new Random().Next(0, GestionFichero.listaefectoSec.Length)].ToString();
             this.Color = listaColor[new Random().Next(0, listaColor.Count)].ToString();
 
             if (opcion == 1)
