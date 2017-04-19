@@ -145,6 +145,12 @@ namespace GeneradorPociones
             XmlAttribute tipoEstilo = escritorHTML.CreateAttribute("type");
             tipoEstilo.Value = "text / css";
             estiloTablas.Attributes.Append(tipoEstilo);
+            estiloTablas.InnerText = @" .tg  {border-collapse:collapse;border-spacing:0;}
+                                        .tg td { font - family:Arial, sans - serif; font - size:14px; padding: 10px 20px; border - style:solid; border - width:1px; overflow: hidden; word -break:normal;}
+                                        .tg th{ font - family:Arial, sans - serif; font - size:14px; font - weight:normal; padding: 10px 20px; border - style:solid; border - width:1px; overflow: hidden; word -break:normal;}
+                                        .tg .tg-baqh { text - align:center; vertical - align:top}
+                                        .tg .tg-14nr { background - color:#bbdaff;text-align:center;vertical-align:top}";
+            head.AppendChild(estiloTablas);
 
             // Clase CSS
             XmlAttribute clase = escritorHTML.CreateAttribute("class");
@@ -155,12 +161,6 @@ namespace GeneradorPociones
             XmlAttribute cols3 = escritorHTML.CreateAttribute("colspan");
             cols3.Value = "3";
 
-            estiloTablas.InnerText = @" .tg  {border-collapse:collapse;border-spacing:0;}
-                                        .tg td { font - family:Arial, sans - serif; font - size:14px; padding: 10px 20px; border - style:solid; border - width:1px; overflow: hidden; word -break:normal;}
-                                        .tg th{ font - family:Arial, sans - serif; font - size:14px; font - weight:normal; padding: 10px 20px; border - style:solid; border - width:1px; overflow: hidden; word -break:normal;}
-                                        .tg.tg - baqh { text - align:center; vertical - align:top}
-                                        .tg.tg - 14nr { background - color:#bbdaff;text-align:center;vertical-align:top}";
- 
             foreach (Pocion item in lista)
             {
                 // TABLE y HEADERS

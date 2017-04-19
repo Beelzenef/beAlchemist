@@ -20,7 +20,7 @@ namespace GeneradorPociones
         private void GenerarPocima(object sender, EventArgs e)
         {
             contadorPociones++;
-            lbl_NPociones.Text = contadorPociones.ToString();
+            ActualizarContador();
             // Generando pociones
 
             Pocion unaPocion = new Pocion(marcandoOpciones);
@@ -64,12 +64,18 @@ namespace GeneradorPociones
             listaPoc.Add(unaPocion);
         }
 
+        private void ActualizarContador()
+        {
+            lbl_NPociones.Text = contadorPociones.ToString();
+        }
 
         #region Gestion de menu
 
         private void nuevo_MenuItem_Click(object sender, EventArgs e)
         {
             lsB_Resultados.Items.Clear();
+            contadorPociones = 0;
+            ActualizarContador();
         }
 
         private void info_MenuItem_Click(object sender, EventArgs e)
